@@ -40,8 +40,8 @@
             "sublayouts": null
           },
           {
-            "title": "部署",
-            "relative_path": "开始/部署",
+            "title": "云上部署",
+            "relative_path": "开始/云上部署",
             "isdir": false,
             "sublayouts": null
           }
