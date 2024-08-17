@@ -29,32 +29,19 @@
     ],
     "zh": [
       {
-        "title": "欢迎",
-        "relative_path": "欢迎",
+        "title": "开始",
+        "relative_path": "开始",
         "isdir": true,
         "sublayouts": [
           {
             "title": "开始使用",
-            "relative_path": "欢迎/开始使用",
-            "isdir": false,
-            "sublayouts": null
-          }
-        ]
-      },
-      {
-        "title": "安装",
-        "relative_path": "安装",
-        "isdir": true,
-        "sublayouts": [
-          {
-            "title": "安装",
-            "relative_path": "安装/安装",
+            "relative_path": "开始/开始使用",
             "isdir": false,
             "sublayouts": null
           },
           {
             "title": "部署",
-            "relative_path": "安装/部署",
+            "relative_path": "开始/部署",
             "isdir": false,
             "sublayouts": null
           }
@@ -66,6 +53,37 @@
         "isdir": true,
         "sublayouts": [
           {
+            "title": "语法",
+            "relative_path": "使用/语法",
+            "isdir": true,
+            "sublayouts": [
+              {
+                "title": "基础语法",
+                "relative_path": "使用/语法/基础语法",
+                "isdir": false,
+                "sublayouts": null
+              },
+              {
+                "title": "代码",
+                "relative_path": "使用/语法/代码",
+                "isdir": false,
+                "sublayouts": null
+              },
+              {
+                "title": "公式",
+                "relative_path": "使用/语法/公式",
+                "isdir": false,
+                "sublayouts": null
+              },
+              {
+                "title": "图片及视频",
+                "relative_path": "使用/语法/图片及视频",
+                "isdir": false,
+                "sublayouts": null
+              }
+            ]
+          },
+          {
             "title": "功能",
             "relative_path": "使用/功能",
             "isdir": false,
@@ -74,12 +92,6 @@
           {
             "title": "配置",
             "relative_path": "使用/配置",
-            "isdir": false,
-            "sublayouts": null
-          },
-          {
-            "title": "语法",
-            "relative_path": "使用/语法",
             "isdir": false,
             "sublayouts": null
           }
