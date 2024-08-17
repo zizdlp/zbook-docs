@@ -168,24 +168,18 @@
       },
       {
         "title": "开发",
-        "relative_path": "reference",
+        "relative_path": "开发",
         "isdir": true,
         "sublayouts": [
           {
-            "title": "overview",
-            "relative_path": "reference/overview",
+            "title": "后端",
+            "relative_path": "开发/后端",
             "isdir": false,
             "sublayouts": null
           },
           {
-            "title": "client-methods",
-            "relative_path": "reference/client-methods",
-            "isdir": false,
-            "sublayouts": null
-          },
-          {
-            "title": "server-methods",
-            "relative_path": "reference/server-methods",
+            "title": "前端",
+            "relative_path": "开发/前端",
             "isdir": false,
             "sublayouts": null
           }
