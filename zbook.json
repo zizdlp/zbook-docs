@@ -117,12 +117,12 @@
     "zh": [
       {
         "title": "欢迎",
-        "relative_path": "介绍",
+        "relative_path": "欢迎",
         "isdir": true,
         "sublayouts": [
           {
-            "title": "介绍",
-            "relative_path": "欢迎/介绍",
+            "title": "开始使用",
+            "relative_path": "欢迎/开始使用",
             "isdir": false,
             "sublayouts": null
           }
