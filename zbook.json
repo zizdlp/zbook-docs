@@ -56,7 +56,7 @@
       {
         "title": "功能",
         "relative_path": "功能",
-        "isdir": false,
+        "isdir": true,
         "sublayouts": [
           {
             "title": "基础功能",
