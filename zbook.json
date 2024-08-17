@@ -64,14 +64,8 @@
                 "sublayouts": null
               },
               {
-                "title": "代码",
-                "relative_path": "使用/语法/代码",
-                "isdir": false,
-                "sublayouts": null
-              },
-              {
-                "title": "公式",
-                "relative_path": "使用/语法/公式",
+                "title": "公式及代码",
+                "relative_path": "使用/语法/公式及代码",
                 "isdir": false,
                 "sublayouts": null
               },
