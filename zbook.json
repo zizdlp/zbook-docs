@@ -72,6 +72,12 @@
             "sublayouts": null
           },
           {
+            "title": "配置",
+            "relative_path": "使用/配置",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
             "title": "语法",
             "relative_path": "使用/语法",
             "isdir": false,
