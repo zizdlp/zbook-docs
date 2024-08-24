@@ -1,0 +1,20 @@
+name: auto_sync
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  auto_sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy Stage
+      run: |
+        curl -X POST ${{ secrets.ZBOOK_URI }} \
+          -H 'Content-Type: application/json' \
+          -d '{
+            "repo_name": "${{ secrets.ZBOOK_REPO_NAME }}",
+            "username": "${{ secrets.ZBOOK_USERNAME }}",
+            "sync_token": "${{ secrets.ZBOOK_SYNC_TOKEN }}"
+          }' \
+          --max-time 600 # 设置最大超时时间为600秒
