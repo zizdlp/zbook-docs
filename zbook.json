@@ -23,6 +23,18 @@
             "relative_path": "welcome/introduction",
             "isdir": false,
             "sublayouts": null
+          },
+          {
+            "title": "config",
+            "relative_path": "welcome/config",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "deploy",
+            "relative_path": "welcome/deploy",
+            "isdir": false,
+            "sublayouts": null
           }
         ]
       }
