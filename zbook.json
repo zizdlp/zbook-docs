@@ -12,7 +12,7 @@
     }
   ],
   "layout": {
-    "en": [
+    "default": [
       {
         "title": "Welcome",
         "relative_path": "welcome",
