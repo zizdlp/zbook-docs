@@ -80,6 +80,25 @@
             "sublayouts": null
           }
         ]
+      },
+      {
+        "title": "Syntax",
+        "relative_path": "Syntax",
+        "isdir": true,
+        "sublayouts": [
+          {
+            "title": "Basic Syntax",
+            "relative_path": "Syntax/Basic Syntax",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "Formulas and Code",
+            "relative_path": "Syntax/Formulas and Code",
+            "isdir": false,
+            "sublayouts": null
+          }
+        ]
       }
     ],
     "zh": [
