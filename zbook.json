@@ -25,14 +25,14 @@
             "sublayouts": null
           },
           {
-            "title": "config",
-            "relative_path": "welcome/config",
+            "title": "Configuration",
+            "relative_path": "welcome/Configuration",
             "isdir": false,
             "sublayouts": null
           },
           {
-            "title": "deploy",
-            "relative_path": "welcome/deploy",
+            "title": "Cloud Deployment",
+            "relative_path": "welcome/Cloud Deployment",
             "isdir": false,
             "sublayouts": null
           }
