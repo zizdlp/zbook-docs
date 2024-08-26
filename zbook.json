@@ -37,6 +37,49 @@
             "sublayouts": null
           }
         ]
+      },
+      {
+        "title": "Features",
+        "relative_path": "Features",
+        "isdir": true,
+        "sublayouts": [
+          {
+            "title": "Core Features",
+            "relative_path": "Features/Core Features",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "Monitoring",
+            "relative_path": "Features/Monitoring",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "Notification",
+            "relative_path": "Features/Notification",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "Comments",
+            "relative_path": "Features/Comments",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "Synchronization",
+            "relative_path": "Features/Synchronization",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "Permission Management",
+            "relative_path": "Features/Permission Management",
+            "isdir": false,
+            "sublayouts": null
+          }
+        ]
       }
     ],
     "zh": [
