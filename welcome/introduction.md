@@ -1,6 +1,6 @@
 # ZBook Official Documentation
 
-Welcome to ZBook, a fully open-source, full-stack knowledge management software designed for teams. This repository is the official documentation repository for ZBook. To access the ZBook source code, please visit [https://github.com/zizdlp/zbook](https://github.com/zizdlp/zbook). For the English page, click [开始使用](../开始/开始使用.md).
+Welcome to ZBook, a fully open-source, full-stack knowledge management software designed for teams. This repository is the official documentation repository for ZBook. To access the ZBook source code, please visit [https://github.com/zizdlp/zbook](https://github.com/zizdlp/zbook). For the Chinese page, click [开始使用](../开始/开始使用.md).
 
 ![group_demo](../assets/group_demo.png)
 
