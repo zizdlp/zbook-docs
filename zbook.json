@@ -124,6 +124,20 @@
             "sublayouts": null
           }
         ]
+      },
+      {
+        "title": "Cases",
+        "relative_path": "Cases",
+        "isdir": true,
+        "sublayouts": [
+          {
+            "title": "What Is YOLO Algorithm?",
+            "relative_path": "Cases/YOLO",
+            "isdir": false,
+            "sublayouts": null
+          }
+         
+        ]
       }
     ],
     "zh": [
