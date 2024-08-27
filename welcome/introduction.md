@@ -10,6 +10,7 @@ Welcome to the ZBook documentation guide. Follow these instructions to learn how
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQ57huY2yCU?si=SSnA63mNBUkeDrGT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ### 1. Install Dependencies
 
 To run ZBook smoothly, you need to install Docker and Docker Compose. Please follow these steps:
