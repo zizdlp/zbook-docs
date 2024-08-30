@@ -115,7 +115,7 @@ balance(&playerOneScore, &playerOneScore)
 The balance(_:_:) function above modifies its two parameters to divide the total value evenly between them. Calling it with playerOneScore and playerTwoScore as arguments doesn’t produce a conflict — there are two write accesses that overlap in time, but they access different locations in memory. In contrast, passing playerOneScore as the value for both parameters produces a conflict because it tries to perform two write accesses to the same location in memory at the same time.
 
 !!! Note Note
-    Because operators are functions, they can also have long-term accesses to their in-out parameters. For example, if balance(_:_:) was an operator function named <^>, writing playerOneScore <^> playerOneScore would result in the same conflict as balance(&playerOneScore, &playerOneScore).
+Because operators are functions, they can also have long-term accesses to their in-out parameters. For example, if balance(_:_:) was an operator function named <^>, writing playerOneScore <^> playerOneScore would result in the same conflict as balance(&playerOneScore, &playerOneScore).
 
 ## Conflicting Access to self in Methods
 
@@ -151,7 +151,7 @@ oscar.shareHealth(with: &maria)  // OK
 
 In the example above, calling the shareHealth(with:) method for Oscar’s player to share health with Maria’s player doesn’t cause a conflict. There’s a write access to oscar during the method call because oscar is the value of self in a mutating method, and there’s a write access to maria for the same duration because maria was passed as an in-out parameter. As shown in the figure below, they access different locations in memory. Even though the two write accesses overlap in time, they don’t conflict.
 
-![memory_share_health_maria](./assets/memory_share_health_maria~dark@2x.png)
+![memory_share_health_maria](./assets/memory_share_health_oscar@2x.png)
 
 However, if you pass oscar as the argument to shareHealth(with:), there’s a conflict:
 
@@ -161,3 +161,5 @@ oscar.shareHealth(with: &oscar)
 ```
 
 The mutating method needs write access to self for the duration of the method, and the in-out parameter needs write access to teammate for the same duration. Within the method, both self and teammate refer to the same location in memory — as shown in the figure below. The two write accesses refer to the same memory and they overlap, producing a conflict.
+
+Conflicting Access to Properties
