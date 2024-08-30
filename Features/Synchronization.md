@@ -9,26 +9,49 @@ To configure GitHub Actions for ZBook repositories, you need to create a YAML fi
 Create a file named `.github/workflows/main.yml` in the root directory of your ZBook repository. This file will contain the GitHub Actions configuration.
 
 ```yaml
-name: auto_sync
+name: Auto Sync
 
 on:
   push:
     branches:
       - main
+
 jobs:
   auto_sync:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Stage
         run: |
-          curl -X POST ${{ secrets.ZBOOK_URI }} \
+          # Enable error handling
+          set -e
+
+          # Execute the API request and capture the response
+          RESPONSE=$(curl -X POST ${{ secrets.ZBOOK_URI }} \
             -H 'Content-Type: application/json' \
             -d '{
               "repo_name": "${{ secrets.ZBOOK_REPO_NAME }}",
               "username": "${{ secrets.ZBOOK_USERNAME }}",
               "sync_token": "${{ secrets.ZBOOK_SYNC_TOKEN }}"
-            }' \
-            --max-time 600 # Set the maximum timeout to 600 seconds
+            }' --max-time 600)
+
+          # Output the response content
+          echo "Response: $RESPONSE"
+
+          # Check if the response is empty
+          if [ -z "$RESPONSE" ]; then
+            echo "Error: Empty response from API"
+            exit 1
+          fi
+
+          # Check if the response contains the expected status code or key fields
+          STATUS_CODE=$(echo "$RESPONSE" | grep -oP '(?<="status":)\d+' || echo "200")
+
+          if [ "$STATUS_CODE" -ne 200 ]; then
+            echo "Error: API request failed with status code $STATUS_CODE"
+            exit 1
+          fi
+
+          echo "API request successful."
 ```
 
 In the GitHub repository's Secrets, you need to configure the following variables:
