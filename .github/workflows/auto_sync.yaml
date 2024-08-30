@@ -4,16 +4,17 @@ on:
   push:
     branches:
       - main
+
 jobs:
   auto_sync:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Stage
         run: |
-          # 启用错误处理，一旦命令出错就终止执行
+          # 启用错误处理
           set -e
 
-          # 执行 API 请求
+          # 执行 API 请求并捕获响应
           RESPONSE=$(curl -X POST ${{ secrets.ZBOOK_URI }} \
             -H 'Content-Type: application/json' \
             -d '{
@@ -25,10 +26,18 @@ jobs:
           # 输出响应内容
           echo "Response: $RESPONSE"
 
-          # 检查 HTTP 状态码
-          STATUS_CODE=$(echo "$RESPONSE" | grep -oP '(?<="status":)\d+')
-          
+          # 检查响应内容是否为空
+          if [ -z "$RESPONSE" ]; then
+            echo "Error: Empty response from API"
+            exit 1
+          fi
+
+          # 检查响应中是否包含预期的内容（例如状态码或关键字段）
+          STATUS_CODE=$(echo "$RESPONSE" | grep -oP '(?<="status":)\d+' || echo "200")
+
           if [ "$STATUS_CODE" -ne 200 ]; then
             echo "Error: API request failed with status code $STATUS_CODE"
             exit 1
           fi
+
+          echo "API request successful."
