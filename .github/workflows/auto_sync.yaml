@@ -17,4 +17,5 @@ jobs:
             "username": "${{ secrets.ZBOOK_USERNAME }}",
             "sync_token": "${{ secrets.ZBOOK_SYNC_TOKEN }}"
           }' \
-          --max-time 600 # 设置最大超时时间为600秒
+          --max-time 600 \
+          -w "%{http_code}" -o response.txt || echo "Request failed"
