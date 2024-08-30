@@ -22,7 +22,7 @@ A conflicting access to memory can occur when different parts of your code are t
 
 You can see a similar problem by thinking about how you update a budget that’s written on a piece of paper. Updating the budget is a two-step process: First you add the items’ names and prices, and then you change the total amount to reflect the items currently on the list. Before and after the update, you can read any information from the budget and get a correct answer, as shown in the figure below.
 
-![memory_shopping](./assets/memory_shopping.png)
+![memory_shopping](./assets/memory_shopping@2x.png)
 
 While you’re adding items to the budget, it’s in a temporary, invalid state because the total amount hasn’t been updated to reflect the newly added items. Reading the total amount during the process of adding an item gives you incorrect information.
 
@@ -79,9 +79,9 @@ increment(&stepSize)
 // Error: conflicting accesses to stepSize
 ```
 
-In the code above, stepSize is a global variable, and it’s normally accessible from within increment(\_:). However, the read access to stepSize overlaps with the write access to number. As shown in the figure below, both number and stepSize refer to the same location in memory. The read and write accesses refer to the same memory and they overlap, producing a conflict.
+In the code above, stepSize is a global variable, and it’s normally accessible from within `increment(\_:)`. However, the read access to stepSize overlaps with the write access to number. As shown in the figure below, both number and stepSize refer to the same location in memory. The read and write accesses refer to the same memory and they overlap, producing a conflict.
 
-![memory_increment](./assets/memory_increment.png)
+![memory_increment](./assets/memory_increment@2x.png)
 
 One way to solve this conflict is to make an explicit copy of stepSize:
 
@@ -95,7 +95,7 @@ stepSize = copyOfStepSize
 // stepSize is now 2
 ```
 
-When you make a copy of stepSize before calling increment(\_:), it’s clear that the value of copyOfStepSize is incremented by the current step size. The read access ends before the write access starts, so there isn’t a conflict.
+When you make a copy of stepSize before calling `increment(\_:)`, it’s clear that the value of copyOfStepSize is incremented by the current step size. The read access ends before the write access starts, so there isn’t a conflict.
 
 Another consequence of long-term write access to in-out parameters is that passing a single variable as the argument for multiple in-out parameters of the same function produces a conflict. For example:
 
@@ -115,7 +115,7 @@ balance(&playerOneScore, &playerOneScore)
 The balance(_:_:) function above modifies its two parameters to divide the total value evenly between them. Calling it with playerOneScore and playerTwoScore as arguments doesn’t produce a conflict — there are two write accesses that overlap in time, but they access different locations in memory. In contrast, passing playerOneScore as the value for both parameters produces a conflict because it tries to perform two write accesses to the same location in memory at the same time.
 
 !!! Note Note
-Because operators are functions, they can also have long-term accesses to their in-out parameters. For example, if balance(_:_:) was an operator function named <^>, writing playerOneScore <^> playerOneScore would result in the same conflict as balance(&playerOneScore, &playerOneScore).
+    Because operators are functions, they can also have long-term accesses to their in-out parameters. For example, if balance(_:_:) was an operator function named <^>, writing playerOneScore <^> playerOneScore would result in the same conflict as balance(&playerOneScore, &playerOneScore).
 
 ## Conflicting Access to self in Methods
 
@@ -135,7 +135,7 @@ struct Player {
 }
 ```
 
-In the restoreHealth() method above, a write access to self starts at the beginning of the method and lasts until the method returns. In this case, there’s no other code inside restoreHealth() that could have an overlapping access to the properties of a Player instance. The shareHealth(with:) method below takes another Player instance as an in-out parameter, creating the possibility of overlapping accesses.
+In the `restoreHealth()` method above, a write access to self starts at the beginning of the method and lasts until the method returns. In this case, there’s no other code inside `restoreHealth()` that could have an overlapping access to the properties of a Player instance. The shareHealth(with:) method below takes another Player instance as an in-out parameter, creating the possibility of overlapping accesses.
 
 ```swift
 extension Player {
@@ -151,7 +151,7 @@ oscar.shareHealth(with: &maria)  // OK
 
 In the example above, calling the shareHealth(with:) method for Oscar’s player to share health with Maria’s player doesn’t cause a conflict. There’s a write access to oscar during the method call because oscar is the value of self in a mutating method, and there’s a write access to maria for the same duration because maria was passed as an in-out parameter. As shown in the figure below, they access different locations in memory. Even though the two write accesses overlap in time, they don’t conflict.
 
-![memory_share_health_maria](./assets/memory_share_health_oscar@2x.png)
+![memory_share_health_maria](./assets/memory_share_health_maria@2x.png)
 
 However, if you pass oscar as the argument to shareHealth(with:), there’s a conflict:
 
@@ -162,4 +162,47 @@ oscar.shareHealth(with: &oscar)
 
 The mutating method needs write access to self for the duration of the method, and the in-out parameter needs write access to teammate for the same duration. Within the method, both self and teammate refer to the same location in memory — as shown in the figure below. The two write accesses refer to the same memory and they overlap, producing a conflict.
 
-Conflicting Access to Properties
+![memory_share_health_maria](./assets/memory_share_health_oscar@2x.png)
+
+## Conflicting Access to Properties
+
+Types like structures, tuples, and enumerations are made up of individual constituent values, such as the properties of a structure or the elements of a tuple. Because these are value types, mutating any piece of the value mutates the whole value, meaning read or write access to one of the properties requires read or write access to the whole value. For example, overlapping write accesses to the elements of a tuple produces a conflict:
+
+```swift
+var playerInformation = (health: 10, energy: 20)
+balance(&playerInformation.health, &playerInformation.energy)
+// Error: conflicting access to properties of playerInformation
+```
+
+In the example above, calling balance`(_:_:)` on the elements of a tuple produces a conflict because there are overlapping write accesses to playerInformation. Both playerInformation.health and playerInformation.energy are passed as in-out parameters, which means balance`(_:_:)` needs write access to them for the duration of the function call. In both cases, a write access to the tuple element requires a write access to the entire tuple. This means there are two write accesses to playerInformation with durations that overlap, causing a conflict.
+
+The code below shows that the same error appears for overlapping write accesses to the properties of a structure that’s stored in a global variable.
+
+```swift
+var holly = Player(name: "Holly", health: 10, energy: 10)
+balance(&holly.health, &holly.energy)  // Error
+```
+
+In practice, most access to the properties of a structure can overlap safely. For example, if the variable holly in the example above is changed to a local variable instead of a global variable, the compiler can prove that overlapping access to stored properties of the structure is safe:
+
+```swift
+func someFunction() {
+    var oscar = Player(name: "Oscar", health: 10, energy: 10)
+    balance(&oscar.health, &oscar.energy)  // OK
+}
+```
+
+In the example above, Oscar’s health and energy are passed as the two in-out parameters to balance(_:_:). The compiler can prove that memory safety is preserved because the two stored properties don’t interact in any way.
+
+The restriction against overlapping access to properties of a structure isn’t always necessary to preserve memory safety. Memory safety is the desired guarantee, but exclusive access is a stricter requirement than memory safety — which means some code preserves memory safety, even though it violates exclusive access to memory. Swift allows this memory-safe code if the compiler can prove that the nonexclusive access to memory is still safe. Specifically, it can prove that overlapping access to properties of a structure is safe if the following conditions apply:
+
+- You’re accessing only stored properties of an instance, not computed properties or class properties.
+- The structure is the value of a local variable, not a global variable.
+- The structure is either not captured by any closures, or it’s captured only by nonescaping closures.
+
+If the compiler can’t prove the access is safe, it doesn’t allow the access.
+
+!!! Tip Beta Software
+    This documentation contains preliminary information about an API or technology in development. This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+    
+    Learn more about using Apple’s beta software.
