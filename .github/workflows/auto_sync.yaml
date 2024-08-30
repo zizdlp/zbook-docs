@@ -1,4 +1,4 @@
-name: auto_sync
+name: Auto Sync
 
 on:
   push:
@@ -8,14 +8,27 @@ jobs:
   auto_sync:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy Stage
-      run: |
-        curl -X POST ${{ secrets.ZBOOK_URI }} \
-          -H 'Content-Type: application/json' \
-          -d '{
-            "repo_name": "${{ secrets.ZBOOK_REPO_NAME }}",
-            "username": "${{ secrets.ZBOOK_USERNAME }}",
-            "sync_token": "${{ secrets.ZBOOK_SYNC_TOKEN }}"
-          }' \
-          --max-time 600 \
-          -w "%{http_code}" -o response.txt || echo "Request failed"
+      - name: Deploy Stage
+        run: |
+          # 启用错误处理，一旦命令出错就终止执行
+          set -e
+
+          # 执行 API 请求
+          RESPONSE=$(curl -X POST ${{ secrets.ZBOOK_URI }} \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "repo_name": "${{ secrets.ZBOOK_REPO_NAME }}",
+              "username": "${{ secrets.ZBOOK_USERNAME }}",
+              "sync_token": "${{ secrets.ZBOOK_SYNC_TOKEN }}"
+            }' --max-time 600)
+
+          # 输出响应内容
+          echo "Response: $RESPONSE"
+
+          # 检查 HTTP 状态码
+          STATUS_CODE=$(echo "$RESPONSE" | grep -oP '(?<="status":)\d+')
+          
+          if [ "$STATUS_CODE" -ne 200 ]; then
+            echo "Error: API request failed with status code $STATUS_CODE"
+            exit 1
+          fi
