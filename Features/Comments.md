@@ -9,3 +9,22 @@ Users can leave comments under repository files. These comments are visible only
 The following screenshot shows an example of reporting a comment. Users can report a comment by providing a reason and submitting the report. Administrators can then review the reports and take appropriate actions.
 
 ![Comment Reporting](./assets/report.gif)
+
+```mermaid
+graph TD
+ListLevelOneComment
+-->CommentCard
+-->CommentLevelOne
+-->CommentOperationLine
+-->CommentOperationPop
+
+CommentOperationLine
+-->ListLevelTwoComment
+-->CommentLevelTwo
+
+ListLevelTwoComment
+-->CommentPageBar
+
+ListLevelTwoComment
+-->CommentOperationLine
+```

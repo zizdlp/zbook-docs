@@ -27,3 +27,4 @@ ZBook currently supports Simplified Chinese and English. To add support for a ne
 - `zbook_frontend/messages`: Add the corresponding files and complete the content, such as `fr.json`.
 - `zbook_frontend/src/navigation.ts`: Add the new language to `locales`.
 - `zbook_frontend/global.d.ts`: Append the new language.
+- `zbook_frontend/src/components/navbars/NavTheme.tsx`: Append the new language to `localeMap`.
