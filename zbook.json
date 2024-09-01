@@ -257,6 +257,25 @@
             "sublayouts": null
           }
         ]
+      },
+      {
+        "title": "案例",
+        "relative_path": "Cases",
+        "isdir": true,
+        "sublayouts": [
+          {
+            "title": "What Is YOLO Algorithm?",
+            "relative_path": "Cases/YOLO",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "Memory Safety",
+            "relative_path": "Cases/Memory Safety",
+            "isdir": false,
+            "sublayouts": null
+          }
+        ]
       }
     ]
   },
