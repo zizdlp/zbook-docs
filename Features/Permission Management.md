@@ -2,7 +2,7 @@
 
 Users can create repositories with different visibility permissions, including `Only Creator Visible`, `Only Logged-in Users Visible`, `Visible to Everyone`, and `Visible to Selected Users Only`. As the names suggest, `Only Logged-in Users Visible` means that only logged-in users can view the repository contents, while `Visible to Selected Users Only` means that only the selected group of users can view the repository.
 
-![Repository Permissions](./assets/仓库权限.png)
+![Repository Permissions](./assets/visi.png)
 
 ## Selected Users
 

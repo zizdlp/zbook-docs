@@ -31,7 +31,7 @@ The following screenshot provides an overview of ZBook’s visitor analysis, off
 
 These features allow administrators to analyze visitor behavior in-depth, optimize website content and user experience, and develop more targeted operational strategies.
 
-![Visitors](./assets/访客.png)
+![Visitors](./assets/dashboard.png)
 
 ### Other Overviews
 
@@ -44,10 +44,10 @@ The following screenshot provides an overview of ZBook, including:
 
 These features allow administrators to analyze user behavior deeply, optimize website content and user experience, and develop more targeted operational strategies.
 
-![Users](./assets/用户.png)
+![Users](./assets/dashboard_2.png)
 
 ## Summary
 
 In addition to the above visitor information, summaries of users, sessions, repositories, comments, and reports are also available for review. For example, on the user page, administrator accounts can view and filter users, and block or delete non-administrator users.
 
-![Summary](./assets/汇总.gif)
+![Summary](./assets/dashboard_3.gif)
