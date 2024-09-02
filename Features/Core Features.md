@@ -2,7 +2,7 @@
 
 ZBook supports multi-user management, allowing users with different roles to perform operations based on their permissions. Each user can independently create or manage their own repositories, edit personal information, view access analytics, and link third-party accounts (such as GitHub, GitLab, etc.). Administrators can assign different permission levels to ensure secure access and manage the core functions of the site. The flexible multi-user functionality is suitable for individual developers, team collaboration, and large organizations, providing an efficient management experience for users.
 
-![Multi-User](./assets/多用户.png)
+![repos](./assets/repos.png)
 
 ZBook offers simple Markdown repository rendering, supports various theme styles, colors, multi-language support, night mode, and full-text search in multiple languages.
 
