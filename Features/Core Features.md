@@ -19,8 +19,8 @@ Below is a comparison table between ZBook, MkDocs, and other similar platforms (
 | **Free to Use**            | Yes                                            | Yes                                | Core features free               | Yes                              |
 | **Multi-User Support**     | Yes                                            | No                                 | Yes (Paid users only)            | No                               |
 | **Permission Management**  | Yes                                            | No                                 | Yes (Paid users only)            | No                               |
-| **Multi-Language Support** | Yes                                            | Yes                                | No                               | Yes                              |
-| **Plugin Extensions**      | Yes                                            | Yes                                | No                               | Yes                              |
+| **Multi-Language Support** | Yes                                            | Yes                                | Yes                               | Yes                              |
+| **Plugin Extensions**      | Yes                                            | Yes                                | Yes                               | Yes                              |
 | **Markdown Support**       | Yes                                            | Yes                                | Yes                              | Yes                              |
 | **Search Functionality**   | Yes                                            | Yes (Built-in)                     | Yes                              | Yes                              |
 | **Theme Customization**    | Yes                                            | Yes                                | No (Limited in paid version)     | Yes                              |
@@ -28,7 +28,7 @@ Below is a comparison table between ZBook, MkDocs, and other similar platforms (
 | **Sync Support**           | Yes (Manual & Automatic)                       | Yes (Manual)                       | Yes (Git integration)            | Yes (Git integration)            |
 | **Version Control**        | Yes                                            | Yes                                | Yes                              | Yes                              |
 | **Integration**            | GitHub, GitLab, etc.                           | GitHub, GitLab                     | GitHub                           | GitHub, GitLab                   |
-| **Community Support**      | No                                             | Active                             | Active                           | Active                           |
+| **Community Support**      | Yes,Limited                                             | Active                             | Active                           | Active                           |
 | **Visitor Analytics**      | Yes                                            | No                                 | No                               | No                               |
 | **Deployment Complexity**  | Low                                            | Low                                | Low                              | Medium                           |
 | **Suitable Scenarios**     | Multi-user, Permission Management, Self-hosted | Lightweight documentation projects | Small teams, individual projects | Large projects, community-driven |
