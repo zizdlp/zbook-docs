@@ -171,8 +171,8 @@ spec:
 
    Configure your application settings in the `zbook/values.yaml` file. You can define environment variables, service settings, and more in `values.yaml`.
 
-   !!! note TODO
-   The ZBook Helm chart will be publicly available once completed: <https://github.com/zizdlp/devops>
+   !!! TIP TIP
+        ZBook Helm chart: <https://github.com/zizdlp/zbook-helm-chart>. You need to first rename values_template.yaml to values.yaml, then fill in your own configuration details.
 
 4. **Deploy the Application**:
 
