@@ -31,8 +31,8 @@
             "sublayouts": null
           },
           {
-            "title": "Cloud Deployment",
-            "relative_path": "welcome/Cloud Deployment",
+            "title": "Deployment",
+            "relative_path": "welcome/Deployment",
             "isdir": false,
             "sublayouts": null
           }
@@ -158,8 +158,8 @@
             "sublayouts": null
           },
           {
-            "title": "云上部署",
-            "relative_path": "开始/云上部署",
+            "title": "部署",
+            "relative_path": "开始/部署",
             "isdir": false,
             "sublayouts": null
           },
