@@ -72,7 +72,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsam, pariatu
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsam, pariatur illum odit beatae numquam ab fuga voluptas sequi maxime praesentium,$A=\sum_{i=0}^{i<100}B_i + \int_{i=0}^{i=100}\frac{f(x)}{g(x)}dx$ atque amet doloribus nostrum, eveniet aliquam perferendis perspiciatis repellat?
 
-![](./screen.png)
+![screen](./assets/screen.png)
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsam, pariatur illum odit beatae numquam ab fuga voluptas sequi maxime praesentium,$A=\sum_{i=0}^{i<100}B_i + \int_{i=0}^{i=100}\frac{f(x)}{g(x)}dx$ atque amet doloribus nostrum, eveniet aliquam perferendis perspiciatis repellat?
 
