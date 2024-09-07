@@ -141,6 +141,12 @@
             "relative_path": "Cases/Memory Safety",
             "isdir": false,
             "sublayouts": null
+          },
+          {
+            "title": "Synax",
+            "relative_path": "Cases/Synax",
+            "isdir": false,
+            "sublayouts": null
           }
         ]
       }
