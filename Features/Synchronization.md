@@ -58,7 +58,7 @@ In the GitHub repository's Secrets, you need to configure the following variable
 
 | Parameter           | Description                                              |
 | ------------------- | -------------------------------------------------------- |
-| `ZBOOK_URI`         | The URI of the target API, e.g., `https://****/v1/auto_sync_repo` |
+| `ZBOOK_URI`         | The URI of the target API, e.g., `https://zizdlp.com/api/sync` |
 | `ZBOOK_REPO_NAME`   | The name of the current project's repository, e.g., `docs` |
 | `ZBOOK_USERNAME`    | The username, e.g., `admin`                              |
 | `ZBOOK_SYNC_TOKEN`  | The synchronization token used for authentication, provided when the repository was created |
