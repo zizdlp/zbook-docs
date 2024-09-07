@@ -26,22 +26,14 @@ jobs:
           set -e
 
           # Execute the API request and capture the response
-          RESPONSE=$(curl -X POST ${{ secrets.ZBOOK_URI }} \
+          URL="${{ secrets.ZBOOK_URI }}?username=${{ secrets.ZBOOK_USERNAME }}&sync_token=${{ secrets.ZBOOK_SYNC_TOKEN }}&repo_name=${{ secrets.ZBOOK_REPO_NAME }}"
+
+          RESPONSE=$(curl -X GET "$URL" \
             -H 'Content-Type: application/json' \
-            -d '{
-              "repo_name": "${{ secrets.ZBOOK_REPO_NAME }}",
-              "username": "${{ secrets.ZBOOK_USERNAME }}",
-              "sync_token": "${{ secrets.ZBOOK_SYNC_TOKEN }}"
-            }' --max-time 600)
+            --max-time 600)
 
           # Output the response content
           echo "Response: $RESPONSE"
-
-          # Check if the response is empty
-          if [ -z "$RESPONSE" ]; then
-            echo "Error: Empty response from API"
-            exit 1
-          fi
 
           # Check if the response contains the expected status code or key fields
           STATUS_CODE=$(echo "$RESPONSE" | grep -oP '(?<="status":)\d+' || echo "200")
