@@ -101,6 +101,31 @@
         ]
       },
       {
+        "title": "Cases",
+        "relative_path": "Cases",
+        "isdir": true,
+        "sublayouts": [
+          {
+            "title": "Syntax",
+            "relative_path": "Cases/Syntax",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "What Is YOLO Algorithm?",
+            "relative_path": "Cases/YOLO",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "Memory Safety",
+            "relative_path": "Cases/Memory Safety",
+            "isdir": false,
+            "sublayouts": null
+          }
+        ]
+      },
+      {
         "title": "Development",
         "relative_path": "Development",
         "isdir": true,
@@ -120,31 +145,6 @@
           {
             "title": "Database",
             "relative_path": "Development/Database",
-            "isdir": false,
-            "sublayouts": null
-          }
-        ]
-      },
-      {
-        "title": "Cases",
-        "relative_path": "Cases",
-        "isdir": true,
-        "sublayouts": [
-          {
-            "title": "What Is YOLO Algorithm?",
-            "relative_path": "Cases/YOLO",
-            "isdir": false,
-            "sublayouts": null
-          },
-          {
-            "title": "Memory Safety",
-            "relative_path": "Cases/Memory Safety",
-            "isdir": false,
-            "sublayouts": null
-          },
-          {
-            "title": "Syntax",
-            "relative_path": "Cases/Syntax",
             "isdir": false,
             "sublayouts": null
           }
