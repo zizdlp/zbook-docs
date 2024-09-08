@@ -4,6 +4,8 @@ Welcome to ZBook, a fully open-source, full-stack knowledge management software 
 
 ![group_demo](../assets/group_demo.png)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wt6LEZTv79o?si=CaZAiI4ndROt9IFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Quick Start
 
 Welcome to the ZBook documentation guide. Follow these instructions to learn how to deploy, update, and enhance your ZBook documentation.
@@ -46,7 +48,7 @@ After logging in, you'll be redirected to your personal homepage. In the sidebar
 
 ![login](./assets/login.gif)
 
-You can also use other markdown repositories (composed of markdown documents). For specific configuration, see [Features](../使用/功能.md). Not sure about the supported markdown syntax? Click [Syntax](../使用/语法.md).
+You can also use other markdown repositories (composed of markdown documents). For specific configuration, see [Features](../Features/Core Features.md). Not sure about the supported markdown syntax? Click [Syntax](../Syntax/Basic syntax.md).
 
 ## Done
 
