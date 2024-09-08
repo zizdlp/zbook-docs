@@ -48,7 +48,7 @@ After logging in, you'll be redirected to your personal homepage. In the sidebar
 
 ![login](./assets/login.gif)
 
-You can also use other markdown repositories (composed of markdown documents). For specific configuration, see [Features](../Features/Core Features.md). Not sure about the supported markdown syntax? Click [Syntax](../Syntax/Basic syntax.md).
+You can also use other markdown repositories (composed of markdown documents). For specific configuration, see [Features](../Features/CoreFeatures.md). Not sure about the supported markdown syntax? Click [Syntax](../Syntax/BasicSyntax.md).
 
 ## Done
 

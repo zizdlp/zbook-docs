@@ -45,7 +45,7 @@
         "sublayouts": [
           {
             "title": "Core Features",
-            "relative_path": "Features/Core Features",
+            "relative_path": "Features/CoreFeatures",
             "isdir": false,
             "sublayouts": null
           },
@@ -88,7 +88,7 @@
         "sublayouts": [
           {
             "title": "Basic Syntax",
-            "relative_path": "Syntax/Basic Syntax",
+            "relative_path": "Syntax/BasicSyntax",
             "isdir": false,
             "sublayouts": null
           },
