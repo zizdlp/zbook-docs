@@ -10,6 +10,8 @@ The following screenshot shows an example of reporting a comment. Users can repo
 
 ![Comment Reporting](./assets/report.gif)
 
+Frontend comments involve multiple components. The following Mermaid flowchart shows the invocation relationships between the components used for comments.
+
 ```mermaid
 graph TD
 ListLevelOneComment
