@@ -2,7 +2,7 @@
 
 ## Frontend
 
-ZBook currently supports Simplified Chinese and English. To add support for new languages to the frontend part of ZBook, follow these steps:
+ZBook currently supports Simplified Chinese and English. To add support for new languages to the frontend of ZBook, follow these steps:
 
 ### 1. Add Language Files
 
@@ -21,7 +21,7 @@ Ensure that you provide translation content for each field that needs to be tran
 
 ### 2. Update Language Configuration
 
-In the `zbook_frontend/src/navigation.ts` file, add the new language to the `locales` configuration. For example, if you are adding support for French, do the following:
+In the `zbook_frontend/src/navigation.ts` file, add the new language to the `locales` configuration. For example, to add French support:
 
 ```typescript
 import frMessages from "../messages/fr.json";
@@ -62,15 +62,60 @@ const localeMap = {
 
 ### 5. Testing
 
-After completing the above steps, you should test the changes. Navigate to the `zbook_frontend` directory and run `npm run lint` and `npm run build`. If there are no errors, you can start the local server and check the results.
+After completing the above steps, test the changes by navigating to the `zbook_frontend` directory, running `npm run lint` and `npm run build`. If there are no errors, you can start the local server and check the results.
 
 ## Backend
 
-The dashboard can support geographic information in multiple languages. This is somewhat decoupled from the frontend. If the backend does not have corresponding language database information, it will return default language `en` information as shown in the image below:
+After updating the frontend, some modifications are also needed on the backend. First, add the new language in the `zbook_backend/util/lang.go` file:
+
+```go
+const (
+    LangZh = "zh"
+    LangEn = "en"
+    LangDe = "de" // Add new language
+)
+```
+
+Next, update the `ValidateLang` function in the `zbook_backend/val/validator.go` file to include the new language:
+
+```go
+func ValidateLang(value string) error {
+    if value != util.LangEn && value != util.LangZh && value != util.LangDe {
+      return fmt.Errorf("invalid language")
+    }
+    return nil
+}
+```
+
+!!! info Completed
+    After completing the above frontend and backend changes, ZBook will support the new language!
+
+## Database
+
+The dashboard can support geographic information in multiple languages, which is somewhat decoupled from the frontend. If the backend does not have corresponding language database information, it will return default language `en` information, as shown in the image below:
 
 ![lang_support](../开发/assets/lang_support.gif)
 
-If you need to add backend support for corresponding languages, you need to update both the backend and the database. For example:
+If you want the visitor information in the image above to support your language version, additional modifications are needed.
+
+### 1. Multilingual City Names
+
+```go
+type GeoData struct {
+    IPRangeCIDR  string
+    CityNameEn   *string
+    CityNameZhCn *string
+    Latitude     *float64
+    Longitude    *float64
+}
+
+type CityNames struct {
+    En   *string `maxminddb:"en"`
+    ZhCN *string `maxminddb:"zh-CN"`
+}
+```
+
+### 2. Retrieve City Name
 
 ```go
 func getCityName(record *util.GeoInfo, lang string) string {
@@ -85,5 +130,14 @@ func getCityName(record *util.GeoInfo, lang string) string {
 }
 ```
 
+### 3. Add New Column to Database
+
+```sql
+-- Add a new column city_name_de
+ALTER TABLE "geoip" ADD COLUMN city_name_de TEXT;
+```
+
+### 4. Data Conversion
+
 !!! warning TODO
-    Instructions for adding languages to the backend are incomplete. You can start by adding the frontend part only.
+    To be continued
