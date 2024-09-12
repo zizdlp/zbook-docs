@@ -147,6 +147,12 @@
             "relative_path": "Development/Database",
             "isdir": false,
             "sublayouts": null
+          },
+          {
+            "title": "Language Support",
+            "relative_path": "Development/LanguageSupport",
+            "isdir": false,
+            "sublayouts": null
           }
         ]
       }
@@ -259,6 +265,12 @@
           {
             "title": "数据库",
             "relative_path": "开发/数据库",
+            "isdir": false,
+            "sublayouts": null
+          },
+          {
+            "title": "语言支持",
+            "relative_path": "开发/语言支持",
             "isdir": false,
             "sublayouts": null
           }
