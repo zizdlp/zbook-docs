@@ -102,6 +102,7 @@ Repository parameter configuration is primarily used to set information related 
 | **Repository Description** | A description of the repository to help visitors understand its contents and facilitate search.                                                                                            |
 | **GitHub Sync Token**      | For GitHub repositories, you can use GitHub Actions for automatic synchronization.                                                                                                         |
 | **Token or Password**      | For private repositories, provide permissions for ZBook to read.                                                                                                                           |
+| **Branch** | Provide the branch to be synchronized; defaults to the main branch if empty. |
 
 ![demo_repo](./assets/demo_repo.png)
 
