@@ -55,4 +55,4 @@ In the GitHub repository's Secrets, you need to configure the following variable
 | `ZBOOK_USERNAME`    | The username, e.g., `admin`                              |
 | `ZBOOK_SYNC_TOKEN`  | The synchronization token used for authentication, provided when the repository was created |
 
-With this GitHub Actions configuration, every time code is pushed to the `main` branch, the synchronization operation will be automatically triggered, synchronizing the code and related information to the specified target system.
+With this GitHub Actions configuration, when code is pushed to the **main** branch, a synchronization operation is automatically triggered to sync the code and related information to the specified target system. You can also trigger synchronization when commits are made to other branches by changing `main` to the specified branch.
