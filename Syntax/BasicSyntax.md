@@ -133,10 +133,10 @@ Admonition is a feature used to insert content blocks for alerts, warnings, info
     This is an information block used to provide useful tips or background information.
 ```
 
-??? info "Information Title"
+??? warning "Information Title"
     This is an information block used to provide useful tips or background information.
 
 ```markdown
-??? info "Information Title"
+??? warning "Information Title"
     This is an information block used to provide useful tips or background information.
 ```
